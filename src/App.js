@@ -3,6 +3,14 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  onEnter = ({currentTarget}) => {
+    currentTarget.classList.add('letter-box-hover')
+  }
+
+  onLeave = ({currentTarget}) => {
+    currentTarget.classList.remove('letter-box-hover')
+  }
+
   render() {
     
     const message = ["Hello ", "My", "name", "is", "Mitch"]
@@ -11,7 +19,11 @@ class App extends Component {
     const renderWordWithColorClass = (word, color) => {
       return word.split("").map( (letter, idx) => {
         return (
-          <div className={`letter-box ${color}`} key={`${letter}-${idx}-${color}`}>
+          <div className={`letter-box ${color}`} key={`${letter}-${idx}-${color}`}
+            onMouseEnter={this.onEnter}
+            onMouseLeave={this.onLeave}
+            onTouchStart={this.onEnter}
+            onTouchEnd={this.onLeave}>
             <p>{letter}</p>
           </div>
         )
