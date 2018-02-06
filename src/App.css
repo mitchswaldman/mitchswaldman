@@ -34,9 +34,32 @@ html, body {
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(var(--cols, 8), minmax(70px, 1fr));
-  grid-template-rows: repeat(var(--rows, 8), minmax(70px, 1fr));
+  grid-template-rows: auto repeat(var(--rows, 8), minmax(70px, 1fr));
   font-size: 2em;
   font-family: 'Catamaran', sans-serif;
+}
+
+a {
+  color: var(--secondary);
+  font-weight: 500;
+}
+
+a:link, a:visited {
+  text-decoration: none;
+  transition: 0.3s;
+  transform: translateY(0);
+}
+
+a:hover, a:active {
+  text-decoration: underline;
+}
+
+nav {
+  font-size: .5em;
+  justify-self: right;
+  align-self: top;
+  grid-column: span 4 / -1;
+  color: var(--secondary);
 }
 
 .letter-box {
