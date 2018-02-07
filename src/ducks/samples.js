@@ -10,6 +10,10 @@ export const onLoad = (tile, buffer) => ({
 	}
 })
 
+// Selectors
+export const areSamplesLoaded = (state) => state.samples.samplesLoaded
+
+// Reducer
 const initState = {
 	samples: {},
 	samplesLoaded: false

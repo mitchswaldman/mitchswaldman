@@ -1,10 +1,12 @@
 import {tilePlayed, tileStopped, getTileState} from 'ducks/tiles'
+import {areSamplesLoaded} from 'ducks/samples'
 import {connect} from 'react-redux'
 import Tile from 'components/Tile'
 
 const ConnectedTile = (() => {
 	const mapStateToProps = (state, {tile}) => ({
-		playing: getTileState(state, tile)
+		playing: getTileState(state, tile),
+		isLoaded: areSamplesLoaded(state)
 	})
 
 	const mapDispatchToProps = (dispatch, {tile}) => ({

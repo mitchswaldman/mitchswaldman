@@ -1,9 +1,12 @@
 import React from 'react'
+import {connect} from 'react-redux' 
 import {Message} from 'Constants'
 import {tileKey} from 'Helpers'
 import ConnectedTile from 'containers/ConnectedTile'
+import {areSamplesLoaded} from 'ducks/samples'
+import './HomeScreen.css'
 
-const HomeScreen = (props) => {
+const HomeScreen = ({isLoaded = false}) => {
 
 	const renderWordWithColorClass = (word, color) => {
       return word.split("").map( (letter, idx) => {
@@ -26,11 +29,24 @@ const HomeScreen = (props) => {
 			  <a href="#">Sounds</a>&nbsp;|&nbsp;
 			  <a href="#">Contact</a>
 			</nav>
-			{Message.map(({word, color})=> {
+			{isLoaded && Message.map(({word, color})=> {
 			  return renderWordWithColorClass(word, color)
 			})}
+			{!isLoaded &&
+				<div class="spinner-wrapper">
+					<div class="spinner">
+					  <div class="bounce1"></div>
+					  <div class="bounce2"></div>
+					  <div class="bounce3"></div>
+					</div>
+				</div>
+			}
 		</div>
 	)
 }
 
-export default HomeScreen
+const mapStateToProps = (state) => ({
+	isLoaded: areSamplesLoaded(state)
+})
+
+export default connect(mapStateToProps)(HomeScreen)
