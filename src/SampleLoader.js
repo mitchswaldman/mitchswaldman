@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import {Component} from 'react'
 import {onLoad} from 'ducks/samples'
 import {connect} from 'react-redux'
 import audioCtx from 'audioCtx'

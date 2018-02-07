@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import {Component} from 'react'
 import {getActiveTiles} from 'ducks/tiles'
 import {connect} from 'react-redux'
 import {SampleBuffer} from 'middleware/SampleBuffer'
@@ -6,7 +6,6 @@ import {arr_diff} from 'Helpers'
 import audioCtx from 'audioCtx'
 
 const playSound = (audioCtx, buffer) => {
-	console.log('playing')
 	const source = audioCtx.createBufferSource()
 	source.buffer = buffer 
 

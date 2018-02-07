@@ -1,7 +1,7 @@
 import React from 'react'
 import Transition from 'react-transition-group/Transition'
 
-const Tile = ({color, onEnter: onEnterCb = null, isLoaded = false, onLeave : onLeaveCb = null, playing = false, children}) => {
+const Tile = ({color, onEnter: onEnterCb = null, isLoaded = true, onLeave : onLeaveCb = null, playing = false, children}) => {
 	const onEnter = ({currentTarget}) => {
 		currentTarget.classList.add('letter-box-hover')
 		if (typeof onEnterCb === 'function') {

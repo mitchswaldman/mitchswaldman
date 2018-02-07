@@ -1,0 +1,6 @@
+.About__p {
+	font-size: 0.7em;
+	color: var(--secondary);
+	grid-column: 1/-1;
+	grid-row: auto / span 1;
+}

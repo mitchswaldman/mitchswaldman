@@ -1,3 +1,6 @@
+import React,{Fragment} from 'react'
+import Tile from 'components/Tile'
+
 export const tileKey = (word, index) => {
 	return `${word}_${index}`
 }
@@ -13,4 +16,17 @@ export const arr_diff = (arr1, arr2) => {
 		}
 	}
 	return Object.keys(diff)
+}
+
+export const renderTiledWord = (word, color = 'clr1') => {
+	return (
+		<Fragment>
+			{word.split("").map(letter => (
+				<div className='About__tile'>
+					<Tile color={color}>
+						<p> {letter} </p>
+					</Tile>
+				</div>
+			))}
+		</Fragment>)
 }

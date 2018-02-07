@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux' 
+import KeyBinder from 'KeyBinder'
 import {Message} from 'Constants'
 import {tileKey} from 'Helpers'
 import ConnectedTile from 'containers/ConnectedTile'
@@ -22,26 +23,21 @@ const HomeScreen = ({isLoaded = false}) => {
     }
 
 	return (
-		<div className="wrapper">
-			<nav>
-			  <a href="#">About</a>&nbsp;|&nbsp;
-			  <a href="#">Code</a>&nbsp;|&nbsp;
-			  <a href="#">Sounds</a>&nbsp;|&nbsp;
-			  <a href="#">Contact</a>
-			</nav>
+		<React.Fragment>
+			<KeyBinder />
 			{isLoaded && Message.map(({word, color})=> {
 			  return renderWordWithColorClass(word, color)
 			})}
 			{!isLoaded &&
-				<div class="spinner-wrapper">
-					<div class="spinner">
-					  <div class="bounce1"></div>
-					  <div class="bounce2"></div>
-					  <div class="bounce3"></div>
+				<div className="spinner-wrapper">
+					<div className="spinner">
+					  <div className="bounce1"></div>
+					  <div className="bounce2"></div>
+					  <div className="bounce3"></div>
 					</div>
 				</div>
 			}
-		</div>
+		</React.Fragment>
 	)
 }
 

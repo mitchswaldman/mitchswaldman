@@ -1,7 +1,7 @@
-import React, {Component} from 'react'
+import {Component} from 'react'
 import {connect} from 'react-redux'
 import {tilePlayed, tileStopped} from 'ducks/tiles'
-import {Message, TileKeys} from 'Constants'
+import {TileKeys} from 'Constants'
 
 const KEY_CODE_MAP = (() => {
 	var map = {}
@@ -36,6 +36,11 @@ class KeyBinder extends Component {
 	componentDidMount() {
 		document.addEventListener('keydown', this.handleKeyDown)
 		document.addEventListener('keyup', this.handleKeyUp)
+	}
+
+	componentWillUnmount() {
+		document.removeEventListener('keydown', this.handleKeyDown)
+		document.removeEventListener('keyup', this.handleKeyUp)
 	}
 
 	shouldComponentUpdate() {

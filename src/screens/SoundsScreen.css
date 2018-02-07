@@ -1,0 +1,14 @@
+.sound-container {
+	grid-column: auto/ span 2;
+	grid-row: auto / span 1;
+	border-bottom: 1px solid var(--secondary);
+}
+
+.sound-container > p {
+	font-size: 0.45em;
+	color: var(--secondary);
+}
+
+.spacer {
+	grid-column: auto / -1;
+}

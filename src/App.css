@@ -2,7 +2,7 @@
   --grad1: #ff5b5b;
   --grad2: #f76b33;
   --grad3: #f9184d;
-  --primary: #f4f4f4;
+  --primary: #b59fe5;
   --secondary: #3d3030;
   --clr1: #00abb9;
   --clr1-alt: #bfeaed;
@@ -26,7 +26,7 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  color: var(--white);
+  color: var(--secondary);
 }
 
 .wrapper {
@@ -34,7 +34,7 @@ html, body {
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(var(--cols, 8), minmax(70px, 1fr));
-  grid-template-rows: auto repeat(var(--rows, 8), minmax(70px, 1fr));
+  grid-template-rows: auto repeat(var(--rows, 8), minmax(70px, auto));
   font-size: 2em;
   font-family: 'Catamaran', sans-serif;
 }
