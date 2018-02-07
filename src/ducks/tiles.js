@@ -30,12 +30,14 @@ export const getActiveTiles = createSelector(
 	}
 )
 
+export const getTileState = (state, tile) => state.tiles[tile] || false
+
 // Reducer
 const initTileState = (() => {
 	const tileState = {}
 	Message.forEach(({word}) => {
-		word.split("").forEach(letter => {
-			const key = tileKey(word, letter)
+		word.split("").forEach((letter, i) => {
+			const key = tileKey(word, i)
 			tileState[key] = false
 		})
 	})

@@ -1,5 +1,5 @@
-export const tileKey = (word, letter) => {
-	return `${word}_${letter}`
+export const tileKey = (word, index) => {
+	return `${word}_${index}`
 }
 
 export const arr_diff = (arr1, arr2) => {

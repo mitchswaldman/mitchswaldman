@@ -10,7 +10,7 @@ const HomeScreen = (props) => {
         return (
           <ConnectedTile 
             color={color} 
-            tile={tileKey(word, letter)}
+            tile={tileKey(word, idx)}
             key={`${letter}-${idx}-${color}`}>
             <p>{letter}</p>
           </ConnectedTile>

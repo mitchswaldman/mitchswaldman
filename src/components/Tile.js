@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Tile = ({color, onEnter: onEnterCb = null, onLeave : onLeaveCb = null, children}) => {
+const Tile = ({color, onEnter: onEnterCb = null, onLeave : onLeaveCb = null, playing = false, children}) => {
 	const onEnter = ({currentTarget}) => {
 		currentTarget.classList.add('letter-box-hover')
 		if (typeof onEnterCb === 'function') {
@@ -16,7 +16,7 @@ const Tile = ({color, onEnter: onEnterCb = null, onLeave : onLeaveCb = null, chi
 	}
 
 	return (
-		<div className={`letter-box ${color}`}
+		<div className={`letter-box ${color} ${playing && 'letter-box-hover'}`}
         onMouseEnter={onEnter}
         onMouseLeave={onLeave}
         onTouchStart={onEnter}

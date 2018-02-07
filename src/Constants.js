@@ -28,6 +28,11 @@ export const Message = [
 	}
 ]
 
+export const TileKeys = Message.map(({word}) => word)
+						.reduce((acc, word) => 
+							acc.concat(word.split("").map((letter, i) => tileKey(word, i))), 
+						[])
+
 /*
 SamplesConfig = {
 	'Hello_H' : 'samples/${CATEGORY}_1', <- samples/ folder under the public/ folder
@@ -39,8 +44,7 @@ SamplesConfig = {
 export const SamplesConfig = Message.reduce((config, {word, category}) => {
 	const wordConfig = {}
 	for(let i = 0; i < word.length; i++) {
-		const letter = word.charAt(i)
-		wordConfig[tileKey(word, letter)] = `samples/${category}_${i+1}.wav`
+		wordConfig[tileKey(word, i)] = `samples/${category}_${i+1}.wav`
 	}
 	return {
 		...config,
