@@ -17,8 +17,9 @@ class Visualizer extends React.Component {
 			WIDTH = canvas.width
 			HEIGHT = canvas.height
 		}
-
 		window.addEventListener('resize', canvasResize)
+		window.addEventListener('orientationchange', canvasResize);
+		window.addEventListener('scroll', canvasResize);
 		canvasResize()
 		
 		let bufferLength = analyserNode.frequencyBinCount
@@ -38,18 +39,18 @@ class Visualizer extends React.Component {
 			let x = 0
 
 			ctx.beginPath()
-			ctx.moveTo(0, HEIGHT)
+			ctx.moveTo(0, 0)
 			for (let i = 0; i < bufferLength; i++) {
 				var v = dataArray[i]
-				var y = HEIGHT  - SCALE * v
+				var y =  SCALE * v
 
 				ctx.lineTo(x, y)
 
 				x += sliceWidth
 			}
 
-			ctx.lineTo(WIDTH, HEIGHT)
-			ctx.lineTo(0, HEIGHT)
+			ctx.lineTo(WIDTH, 0)
+			ctx.lineTo(0, 0)
 			ctx.fill()
 		}
 
