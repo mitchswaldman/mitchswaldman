@@ -9,7 +9,7 @@ class Visualizer extends React.Component {
 	componentDidMount() {
 		const canvas = document.getElementById('my-canvas')
 		const ctx = canvas.getContext('2d')
-		let WIDTH, HEIGHT, SCALE = 1.5
+		let WIDTH, HEIGHT, SCALE = 0.8
 		
 		const canvasResize = () => {
 			canvas.width = window.innerWidth
