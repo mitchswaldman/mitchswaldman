@@ -93,6 +93,10 @@ nav {
   user-select: none;
 }
 
+nav {
+  user-select: none;
+}
+
 .letter-box.clr1 {
   background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
 }
