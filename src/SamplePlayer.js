@@ -3,7 +3,7 @@ import {getActiveTiles} from 'ducks/tiles'
 import {connect} from 'react-redux'
 import {SampleBuffer} from 'middleware/SampleBuffer'
 import {arr_diff} from 'Helpers'
-import audioCtx from 'audioCtx'
+import audioCtx, {mixerNode} from 'audioCtx'
 
 const playSound = (audioCtx, buffer) => {
 	const source = audioCtx.createBufferSource()
@@ -11,7 +11,7 @@ const playSound = (audioCtx, buffer) => {
 
 	const gainNode = audioCtx.createGain()
 	source.connect(gainNode)
-	gainNode.connect(audioCtx.destination)
+	gainNode.connect(mixerNode)
 	source.start()
 	return gainNode
 }

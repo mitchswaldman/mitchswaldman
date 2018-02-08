@@ -29,12 +29,16 @@ html, body {
   color: var(--secondary);
 }
 
+body {
+  background: -webkit-canvas(mybackground);
+  background: -moz-element(#mybackground)
+}
 .wrapper {
   margin: 5%;
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(var(--cols, 8), minmax(70px, 1fr));
-  grid-template-rows: auto repeat(var(--rows, 8), minmax(70px, auto));
+  /*grid-template-rows: auto repeat(var(--rows, 8), minmax(70px, auto));*/
   font-size: 2em;
   font-family: 'Catamaran', sans-serif;
 }

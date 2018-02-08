@@ -22,7 +22,7 @@ const Tile = ({color, onEnter: onEnterCb = null, isLoaded = true, onLeave : onLe
 
 	const transitionStyles = {
 	  entering: { opacity: 0 },
-	  entered:  { opacity: 1 },
+	  entered:  { opacity: 0.8 },
 	};
 	return (
 		<Transition in={isLoaded} timeout={300}>

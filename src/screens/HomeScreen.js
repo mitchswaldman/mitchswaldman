@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux' 
 import KeyBinder from 'KeyBinder'
+import Visualizer from 'Visualizer'
 import {Message} from 'Constants'
 import {tileKey} from 'Helpers'
 import ConnectedTile from 'containers/ConnectedTile'
@@ -25,6 +26,7 @@ const HomeScreen = ({isLoaded = false}) => {
 	return (
 		<React.Fragment>
 			<KeyBinder />
+			<Visualizer/>
 			{isLoaded && Message.map(({word, color})=> {
 			  return renderWordWithColorClass(word, color)
 			})}

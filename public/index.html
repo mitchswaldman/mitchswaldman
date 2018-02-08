@@ -22,11 +22,20 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Mitch</title>
+    <style>
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }
+    </style>
   </head>
   <body>
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
+    <canvas id='my-canvas'></canvas>
     <div id="root"></div>
     <!--
       This HTML file is a template.
@@ -38,5 +47,41 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script>
+      // var canvas = document.getElementById('my-canvas');
+      // var ctx = canvas.getContext("2d");
+      
+      // function getHeight() {
+      //   var body = document.body,
+      //       html = document.documentElement;
+
+      //   return Math.max( body.scrollHeight, body.offsetHeight, 
+      //                          html.clientHeight, html.scrollHeight, html.offsetHeight );
+      // }
+
+      // function canvasResize() {
+      //   canvas.width = window.innerWidth;
+      //   canvas.height = getHeight();
+      //   draw();
+      // }
+
+      // function draw() {
+      //   var space = 4;
+      //   var radius = 0.5;
+      //   var width = window.innerWidth, height = window.innerHeight;
+      //   console.lo
+      //   for(var x = 0; x <= width; x +=space) {
+      //     for(var y = 0; y <= height; y +=space) {
+      //       ctx.fillStyle = '#00abb9';
+      //       ctx.beginPath();
+      //       ctx.ellipse(x, y, radius, radius, 45 * Math.PI/180, 0, 2 * Math.PI);
+      //       ctx.fill();
+      //     }
+      //   }
+      // }
+      // canvasResize();
+      // window.onload = canvasResize;
+      // window.addEventListener('resize', canvasResize);
+    </script>
   </body>
 </html>
