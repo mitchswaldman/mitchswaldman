@@ -1,6 +1,6 @@
 {
   "name": "mitchswaldman",
-  "homepage": "http://mitchswaldman.github.io",
+  "homepage": "http://mitchswaldman.github.io/mitchswaldman",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -19,7 +19,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build --repo git@github.com:mitchswaldman/mitchswaldman.github.io.git --branch master"
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
     "gh-pages": "^1.1.0"
