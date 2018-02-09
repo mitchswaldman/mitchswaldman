@@ -11,7 +11,7 @@ const KEY_CODE_MAP = (() => {
 	return map
 })()
 
-const qwerty = ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'A', 'S', 'D', 'F', 'G', 'H', 'Z', 'X', 'C', 'V', 'B', 'N', 'M ' ]
+const qwerty = ['E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', 'A', 'S', 'D', 'F', 'G', 'H', 'C', 'V', 'B', 'N', 'M' ]
 class KeyBinder extends Component {
 	constructor(props) {
 		super(props)

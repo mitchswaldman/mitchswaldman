@@ -17,8 +17,9 @@ const playSound = (audioCtx, buffer) => {
 }
 
 const stopSound = (gainNode, bufferSource) => {
-	gainNode.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.1)
-	gainNode.disconnect()
+	const timeConstant = 0.010
+	gainNode.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + timeConstant)
+	setTimeout(() => gainNode.disconnect(), timeConstant * 1000)
 }
 
 const sampleCache = {}
