@@ -22,7 +22,7 @@ class Visualizer extends React.Component {
 		window.addEventListener('scroll', canvasResize);
 		canvasResize()
 		
-		let bufferLength = analyserNode.frequencyBinCount
+		let bufferLength = Math.floor(4 * analyserNode.frequencyBinCount / 5)
 		let dataArray = new Uint8Array(bufferLength)
 		ctx.clearRect(0, 0, WIDTH, HEIGHT)
 
