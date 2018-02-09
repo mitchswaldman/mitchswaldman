@@ -43,8 +43,15 @@ SamplesConfig = {
 
 export const SamplesConfig = Message.reduce((config, {word, category}) => {
 	const wordConfig = {}
+	console.log(process.env.NODE_ENV)
 	for(let i = 0; i < word.length; i++) {
-		wordConfig[tileKey(word, i)] = `samples/${category}_${i+1}.wav`
+		
+		if (process.env.NODE_ENV === 'production') {
+			wordConfig[tileKey(word, i)] = `https://d28c0euu4rzwtx.cloudfront.net/${category}_${i+1}.wav.gz`
+		} else {
+			wordConfig[tileKey(word, i)] = `samples/${category}_${i+1}.wav`
+		}
+		console.log(wordConfig[tileKey(word, i)])
 	}
 	return {
 		...config,

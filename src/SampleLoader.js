@@ -3,6 +3,7 @@ import {onLoad} from 'ducks/samples'
 import {connect} from 'react-redux'
 import audioCtx from 'audioCtx'
 import {SamplesConfig} from 'Constants'
+import pako from 'pako'
 
 class SampleLoader extends Component {
 	componentDidMount() {
@@ -11,9 +12,16 @@ class SampleLoader extends Component {
 			request.open('GET', SamplesConfig[key], true)
 			request.responseType = 'arraybuffer'
 			request.onload = () => {
-				audioCtx.decodeAudioData(request.response, (buffer) => {
-					this.props.onLoad(key, buffer)
-				})
+				if (process.env.NODE_ENV === 'production') {
+					var inflatedResponse = pako.inflate(request.response)
+					audioCtx.decodeAudioData(inflatedResponse.buffer, (buffer) => {
+						this.props.onLoad(key, buffer)
+					})
+				} else {
+					audioCtx.decodeAudioData(request.response, (buffer) => {
+						this.props.onLoad(key, buffer)	
+					})
+				}
 			}
 			request.send()
 		})
