@@ -1,5 +1,6 @@
 import React from 'react'
 import {renderTiledWord} from 'Helpers'
+import {Link} from 'react-router-dom'
 import './AboutScreen.css'
 
 const AboutScreen = (props) => {
@@ -13,13 +14,13 @@ const AboutScreen = (props) => {
 				I want to work on products that make people's lives a bit more colorful and enjoyable (but who wouldn't these days).
 				<br/>
 				<br/>
-				In the <span style={{color: 'var(--primary)'}}>Code</span> section, you can find some summary info about the programming projects I've participated in.
+				In the <Link to='/code'><span style={{color: 'var(--primary)'}}>Code</span></Link> section, you can find some summary info about the programming projects I've participated in.
 				<br/>
 				<br/>
-				In the <span style={{color: 'var(--primary)'}}>Sounds</span> section, you can find a curated list of music I've produced.
+				In the <Link to='/sounds'><span style={{color: 'var(--primary)'}}>Sounds</span></Link> section, you can find a curated list of music I've produced.
 				<br/>
 				<br/>
-				In the <span style={{color: 'var(--primary)'}}>Contact</span> section, you can find, well, you know. 
+				In the <Link to='/contact'><span style={{color: 'var(--primary)'}}>Contact</span></Link> section, you can find, well, you know. 
 			</p>
 		</React.Fragment>
 	)
